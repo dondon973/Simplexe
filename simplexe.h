@@ -35,7 +35,7 @@ struct ProgLin_s{
 typedef struct ProgLin_s ProgLin_t;
 
 void model_prob_var(var_t *vars);
-void init_probleme(ProgLin_t *ProgL, contrainte_t *cont, obj_t *objectif);
+void init_probleme(ProgLin_t *ProgL, contrainte_t *cont, obj_t *objectif, var_t *vars);
 void model_prob_contr(contrainte_t *cont,var_t *vars,ProgLin_t *ProgL, obj_t *objectif);
 void affichagematrice(contrainte_t *cont, var_t *vars, ProgLin_t *ProgL, obj_t *objectif);
 void choix_var_entrante(obj_t *objectif, int *indice);

@@ -4,7 +4,8 @@
 
 
 
-/* model_prob_v
+/* model_prob_var
+  @
 */
 void model_prob_var(var_t *vars){
     int i;
@@ -20,7 +21,7 @@ void model_prob_var(var_t *vars){
 
 }
 
-void init_probleme(ProgLin_t *ProgL, contrainte_t *cont, obj_t *objectif){
+void init_probleme(ProgLin_t *ProgL, contrainte_t *cont, obj_t *objectif, var_t *vars){
 	int j;
 	cont->tab_contrt = (char**)malloc((cont->nbr_contrt)*sizeof(char*));    // Construction du tableau des noms des contraintes
 	cont->contrt = (double*)malloc((cont->nbr_contrt)*sizeof(double));      //construction du tableau des valeurs des contraintes
@@ -42,7 +43,7 @@ void model_prob_contr(contrainte_t *cont,var_t *vars,ProgLin_t *ProgL, obj_t *ob
 		printf("Entrer le nombre de contraintes (d'inéquation) du problème \n");
 	     scanf("%d",&cont->nbr_contrt);
 
-			 	init_probleme(&ProgL, &cont, &objectif)
+			 	init_probleme(ProgL, cont, objectif, vars);
     for (j = 0; j < cont->nbr_contrt; j++){
      //  tab_contrt[j]= (char*)malloc(TAILLE_MAX*sizeof(char));
        //matrice[j] = (double*)calloc((nbr_var+(*nbr_contrt)),sizeof(double)); //tableau de dimenstion (n*(m+n)) une matrice
@@ -121,7 +122,7 @@ void choix_var_entrante(obj_t *objectif, int *indice){
 }
 void choix_var_sortante(int indice, ProgLin_t *ProgL, contrainte_t *cont, int *pivot){
 	int i;
-	double max;
+//	double max;
 	double min=999.99;
 	double test;
 
