@@ -63,7 +63,7 @@ void model_prob_contr(contrainte_t *cont,var_t *vars,ProgLin_t *ProgL, obj_t *ob
 
 void affichagematrice(contrainte_t *cont, var_t *vars, ProgLin_t *ProgL, obj_t *objectif){
    int i,j;
-   //printf("(n-m)=(%d - %d) = %d variables affecté a zéro \n", nbr_contrt,nbr_var,nbr_contrt - nbr_var);
+
     printf("Voici la matrice PL avec lequel le programme linéaire va travailler\n");
     printf("PL\t");
     for(i = 0; i<vars->nbr_var ; i++){
